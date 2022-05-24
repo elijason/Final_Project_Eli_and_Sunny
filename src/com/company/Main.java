@@ -12,7 +12,7 @@ public class Main {
 
         //Creating the MenuBar and adding components
         JMenuBar mb = new JMenuBar();
-        JMenu m1 = new JMenu("FILE");
+        JMenu m1 = new JMenu("Bill");
         JMenu m2 = new JMenu("Help");
         mb.add(m1);
         mb.add(m2);
@@ -42,6 +42,11 @@ public class Main {
         frame.setVisible(true);
 
         Scanner sc = new Scanner(System.in);
+        System.out.println("Would you like to split the bill evenly?");
+        equalSplit(sc);
+    }
+
+    public static void equalSplit(Scanner sc) {
         char choice; //variable declared to reprompt user to split another bill
         do {
             System.out.println("Total cost of bill?");
