@@ -1,6 +1,7 @@
 package com.company;
 import javax.swing.*;
 import java.awt.*;
+import java.util.Scanner;
 
 public class Main {
 
@@ -39,5 +40,27 @@ public class Main {
         frame.getContentPane().add(BorderLayout.NORTH, mb);
         frame.getContentPane().add(BorderLayout.CENTER, ta);
         frame.setVisible(true);
+
+        Scanner sc = new Scanner(System.in);
+        char choice; //variable declared to reprompt user to split another bill
+        do {
+            System.out.println("Total cost of bill?");
+            double cost = sc.nextDouble();
+            System.out.println("Tip Amount? (typically 15-20%)");
+            double tipPercent = sc.nextInt();
+            double tipPercentToDecimal = tipPercent / 100.0;
+            double tipAmount = tipPercentToDecimal * cost;
+            double totalBill = tipAmount + cost;
+            System.out.println("Your total bill comes out to:$ " + totalBill);
+            System.out.println("How many people are you splitting among?");
+            double numberPeople = sc.nextInt();
+
+            double pricePerPerson = totalBill / numberPeople;
+            System.out.println("Total cost per person is: $" + Math.round(pricePerPerson * 100)/100.0); //rounds to nearest hundreth
+
+            System.out.println("Do you want to calculate another bill? (Y/N)");
+            choice = sc.next().charAt(0); //reads the letter to see if user input is 'y'
+
+        } while ((choice =='y' || (choice == 'Y')));
     }
 }
