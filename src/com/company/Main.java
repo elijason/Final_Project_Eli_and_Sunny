@@ -42,18 +42,14 @@ public class Main {
         frame.setVisible(true);
 
         Scanner sc = new Scanner(System.in);
-<<<<<<< Updated upstream
+
         System.out.println("Would you like to split the bill evenly?");
         equalSplit(sc);
+
     }
 
-    public static void equalSplit(Scanner sc) {
-=======
-        equalSplit();
->>>>>>> Stashed changes
-        char choice; //variable declared to reprompt user to split another bill
-
     public static void equalSplit(Scanner sc){
+        char choice;
         do {
             System.out.println("Total cost of bill?");
             double cost = sc.nextDouble();
