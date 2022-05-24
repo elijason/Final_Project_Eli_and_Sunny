@@ -42,12 +42,18 @@ public class Main {
         frame.setVisible(true);
 
         Scanner sc = new Scanner(System.in);
+<<<<<<< Updated upstream
         System.out.println("Would you like to split the bill evenly?");
         equalSplit(sc);
     }
 
     public static void equalSplit(Scanner sc) {
+=======
+        equalSplit();
+>>>>>>> Stashed changes
         char choice; //variable declared to reprompt user to split another bill
+
+    public static void equalSplit(Scanner sc){
         do {
             System.out.println("Total cost of bill?");
             double cost = sc.nextDouble();
@@ -56,7 +62,7 @@ public class Main {
             double tipPercentToDecimal = tipPercent / 100.0;
             double tipAmount = tipPercentToDecimal * cost;
             double totalBill = tipAmount + cost;
-            System.out.println("Your total bill comes out to:$ " + totalBill);
+            System.out.println("Your total bill comes out to: $ " + totalBill);
             System.out.println("How many people are you splitting among?");
             double numberPeople = sc.nextInt();
 
@@ -65,7 +71,8 @@ public class Main {
 
             System.out.println("Do you want to calculate another bill? (Y/N)");
             choice = sc.next().charAt(0); //reads the letter to see if user input is 'y'
+    } while ((choice =='y' || (choice == 'Y')));
 
-        } while ((choice =='y' || (choice == 'Y')));
     }
+
 }
